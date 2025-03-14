@@ -1,0 +1,10 @@
+{
+    "project_name": "my_project",
+    "python_version": "3.13",
+    "author": "Edward Niescior",
+    "author_email": "edniescior@gmail.com",
+    "app_name": "my_app",
+    "_copy_without_render": [
+        "*.github"
+    ]
+}
