@@ -27,7 +27,7 @@ Inside the folder you want to setup your project, run the following command:
 ```
 cookiecutter gitpath
 
-cookiecutter file:///Users/edwardn/Workspace/repos/python-project-template
+cookiecutter /Users/edwardn/Workspace/repos/python-project-template
 
 ```
 `cookiecutter` will now prompt you for a couple of configurations like the project name, the python version, and so on.
