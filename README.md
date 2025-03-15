@@ -25,10 +25,7 @@ uv tool install nox
 ### Use the template to create your project
 Inside the folder you want to setup your project, run the following command:
 ```
-cookiecutter gitpath
-
-cookiecutter /Users/edwardn/Workspace/repos/python-project-template
-
+cookiecutter git@github.com:edniescior/python-project-template.git
 ```
 `cookiecutter` will now prompt you for a couple of configurations like the project name, the python version, and so on.
 
@@ -47,7 +44,7 @@ The directory structure you will end up with will look like this:
     │       ├── __init__.py
     │       └── main.py
     ├── tests/
-    │   └── test_e2e.py
+    │   └── test_main.py
     ├── noxfile.py
     └── pyproject.toml
 ```
