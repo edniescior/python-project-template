@@ -10,7 +10,7 @@ authors = [
 requires-python = "=={{ cookiecutter.python_version }}.*"
 dependencies = [
     "fastapi", 
-    "requests,
+    "requests",
     "granian",
 ]
 
