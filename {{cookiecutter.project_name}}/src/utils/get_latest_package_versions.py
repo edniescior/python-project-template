@@ -10,31 +10,28 @@ Usage:
 
 The script outputs the package names along with their latest versions from PyPI.
 If a package is not found or an error occurs, it displays an appropriate error message.
-
-Note: This script uses an unverified SSL context, which is not recommended for production use.
 """
 
 import argparse
 import re
-import json
-import urllib.request
-import ssl
-from typing import List
 import sys
+from typing import List
+
+import requests
 
 
 def get_latest_version(package_name: str) -> str:
     """Get the latest version of a package from PyPI."""
     url = f'https://pypi.org/pypi/{package_name}/json'
-    ssl_context = ssl._create_unverified_context()
 
     try:
-        with urllib.request.urlopen(url, context=ssl_context, timeout=10) as response:
-            data = json.load(response)
-            return data['info']['version']
-    except urllib.error.HTTPError:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        return data['info']['version']
+    except requests.HTTPError:
         return f"Error: Package '{package_name}' not found on PyPI"
-    except Exception as e:
+    except requests.RequestException as e:
         return f'Error retrieving {package_name}: {str(e)}'
 
 
