@@ -50,6 +50,12 @@ The directory structure you will end up with will look like this:
 ```
 
 ## Test the setup
+
+Run a pytest.
+```
+uv run pytest
+```
+
 In order to start running the linting checks, just like it will be done inside the CI environment, you can use `nox`. There are some nox sessions defined inside the `noxfile.py`.
 
 You can run the following sessions in order to check your code.
