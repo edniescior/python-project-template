@@ -3,7 +3,7 @@ from http import HTTPStatus
 import pytest
 from fastapi.testclient import TestClient
 
-from {{ cookiecutter.__app_name_underscore }}.main import app
+from {{ cookiecutter.package_slug }}.main import app
 
 
 @pytest.fixture(name='client')
